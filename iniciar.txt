@@ -1,0 +1,3 @@
+Para iniciar Angular: cd proyecto-angular: ng serve
+
+Para iniciar MongoDB: cd back-end: npm start
