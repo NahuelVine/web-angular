@@ -1,0 +1,370 @@
+/*FUENTES*/
+
+@font-face{
+    font-family: 'franchise';
+    src: url('../fonts/franchise.ttf');
+}
+
+@font-face{
+    font-family: 'metal-gear';
+    src: url('../fonts/mgs.ttf');
+}
+
+@font-face{
+    font-family: 'oversteer';
+    src: url('../fonts/oversteer.ttf');
+}
+
+@font-face{
+    font-family: 'roboto';
+    src: url('../fonts/roboto.ttf');
+}
+
+@font-face{
+    font-family: 'persona';
+    src: url('../fonts/persona5.ttf');
+}
+
+/*CUERPO DE LA PAGINA*/
+
+/*GENERAL*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'roboto';
+    font-size: 20px;
+    /*background: url('../image/pattern2.png');*/
+    background: rgb(0, 0, 0);
+    background-attachment: fixed;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+/*HEADER*/
+
+header{
+    display: block;
+    width: 100%;
+    height: 90px;
+    background: rgb(255, 37, 0);
+    position: fixed;
+    text-transform: uppercase;
+}
+
+header ul{
+    display: block;
+    width: 50%;
+    height: inherit;
+    margin: 0px auto;
+    margin-top: -2px;
+    margin-left: 27%;
+}
+
+header ul li{
+    font-family: 'persona';
+    display: inline-block;
+    margin: 0px auto;
+    text-align: center;
+    line-height: 90px;
+}
+
+header a{
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    height: inherit;
+    text-decoration: none;
+    color: white;
+    transition: all 300ms;
+}
+
+header a:hover,
+.actived{
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/*LOGO*/
+
+#logo{
+    font-family: 'franchise';
+    font-size: 30px;
+}
+
+#logo a:hover{
+    background: transparent;
+    color: black;
+    transition: color 400ms , transform 400ms;
+    transform: scale(1.50,1.50);
+}
+
+/*MUSICA*/
+
+audio{
+    opacity: 0.5;
+    margin-top: 2px;
+}
+
+/*CONTENIDO PRINCIPAL*/
+
+#content{
+    min-height: 700px;
+    height: auto;
+    padding-top: 120px;
+    width: 75%;
+    margin: 0px auto;
+    /*box-shadow: 0px 0px 40px black;*/
+    background: rgba(255, 255, 255, 0.9);
+    border: 5px solid rgba(151, 151, 151, 0.5);
+}
+
+/*SOBRE MI*/
+
+#title{
+    width: 50%;
+    margin: 0px auto;
+    text-align: center;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+#title h1{
+    font-family: "metal-gear";
+    font-size: 60px;
+    border-bottom: 1px solid rgba(151, 151, 151);
+}
+
+#title h2{
+    font-size: 30px;
+    color: rgba(151, 151, 151);
+    margin-top: 5px;
+}
+
+#title p{
+    font-size: 20px;
+    color: rgba(151, 151, 151);
+    margin-top: 5px;
+}
+
+article.about{
+    width: 80%;
+    margin: 0px auto;
+    margin-bottom: 20px;
+}
+
+.about h2{
+    font-size: 25px;
+    color: rgb(110, 109, 109);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+
+.about p{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: justify;
+    margin-left: 25%;
+}
+
+.about img{
+    display: block;
+    margin-top: 5%;
+    float: left;
+    width: 20%;
+}
+
+
+/*SECCION FORMULARIO*/
+
+.container{
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.container h2{
+    display: block;
+    border-bottom: 1px solid rgba(151, 151, 151);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.container p{
+    display: block;
+    text-align: justify;
+    padding: 2px;
+}
+
+#detail .image{
+    float: left;
+    width: 25%;
+}
+
+#detail .image img{
+    width: 100%;
+    border: 1px solid rgb(151, 151, 151);
+}
+
+.container .data{
+    float: left;
+    width: 50%;
+    margin-left: 30px;
+}
+
+form{
+    width: 80%;
+}
+
+form label{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form textarea{
+    width: 35%;
+    padding: 5px;
+}
+
+.form_error{
+    font-size: 15px;
+    color: red;
+    margin-left: 5px;
+}
+
+form button,
+form [type="submit"],
+.button-edit,
+.button-delete{
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid gray;
+    display: block;
+    margin-top: 15px;
+    color: white;
+    background: rgba(255, 37, 0);
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-edit,
+.button-delete{
+    width: 20%;
+    float: left;
+    margin-right: 10px;
+    text-decoration: none;
+    border: 1px solid rgba(151, 151, 151);
+}
+
+.button-delete{
+    background: black;
+}
+
+form button:hover,
+form [type="submit"]:hover{
+    background: rgba(255, 37, 0, 0.8);
+}
+
+form input[disabled]{
+    opacity: 0.4;
+    cursor: default;
+}
+
+/*PAGINA PROYECTOS*/
+
+.project{
+    list-style: none;
+    display: block;
+    float: left;
+    width: 28%;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    transition: all 400ms;
+    border: 1px solid rgba(56, 56, 56, 0.2);
+}
+
+.project:hover{
+    transition: transform 400ms;
+    transform: scale(1.10,1.10);
+}
+
+.project .image{
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.project img{
+    width: 100%;
+}
+
+.project a{
+    text-decoration: none;
+    color: black;
+}
+
+/*PROYECTO INDIVIDUAL*/
+
+.data h2,
+.data h3,
+.data span{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.data .description{
+    display: block;
+    border: 1px solid rgb(151, 151, 151);
+    padding: 5px;
+}
+
+.data .etiqueta{
+    background: rgba(151, 151, 151, 0.7);
+}
+
+span.confirm{
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/*CONTACTO*/
+
+.container#contacto p{
+    width: 71%;
+    margin-left: 10%;
+}
+
+/*FOOTER*/
+
+footer{
+    background: rgb(151, 151, 151, 0.2);
+    font-family: 'persona';
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+/*MENSAJES*/
+
+.message{
+    width: 50%;
+    background: rgba(255, 37, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border: 1px solid rgba(151, 151, 151);
+}

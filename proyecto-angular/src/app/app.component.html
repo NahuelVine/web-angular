@@ -1,0 +1,20 @@
+<header>
+  <ul>
+    <li><a [routerLink]='["/sobre-mi"]' [routerLinkActive]="['actived']">Sobre mi</a></li>
+    <li><a [routerLink]='["/proyectos"]' [routerLinkActive]="['actived']">Proyectos</a></li>
+    <li id='logo'><a href="#">NaVine</a></li>
+    <li><a [routerLink]='["/crear-proyecto"]' [routerLinkActive]="['actived']">Crear proyecto</a></li>
+    <li><a [routerLink]='["/contacto"]' [routerLinkActive]="['actived']">Contacto</a></li>
+  </ul>
+  <audio id="bgm" controls autoplay loop>
+    <source src="../../assets/music/background-music.mp3" type="audio/mp3">
+  </audio>
+</header>
+
+<section id="content">
+  <router-outlet></router-outlet>
+</section>
+
+<footer>
+  Portafolio de NaVine&copy;
+</footer>
