@@ -40,10 +40,10 @@ var controller = {
         if(projectId == null) return res.status(404).send({message: "el proyecto no existe"});
 
         Project.findById(projectId,(err,project)=>{
-            //Con error
+            //With error
             if(err) return res.status(500).send({message: "error al devolver los datos"});
             if(!project) return res.status(404).send({message: "el proyecto no existe"});
-            //Sin error
+            //Without error
             return res.status(200).send({
                 project
             });
@@ -81,36 +81,32 @@ var controller = {
     },
     uploadImage: function(req,res){
         var projectId = req.params.id; 
-        var fileName = 'Imagen no subida...';
-
-        if(req.files){
-            var filePath = req.files.Image.path;
-            var fileName = filePath.split("\\")[1];
-            var fileExt = fileName.split("\.")[1];
-
-            if(fileExt == 'png' || fileExt == 'jpg' || fileExt == 'jpeg' || fileExt == 'gif'){
-                Project.findByIdAndUpdate(projectId,{image: fileName}, {new:true}, (err,projectUpdate)=>{
+        if(req.file){
+            var filePath = req.file.path;
+            var fileSplit = filePath.split('\\');
+            var fileName = fileSplit[1];
+            var extSplit = req.file.originalname.split('.');
+            var fileExt = extSplit[1];
+            if(fileExt== 'png' || fileExt== 'gif' || fileExt== 'jpg' || fileExt == 'jpeg'){
+                Project.findByIdAndUpdate( projectId, {image: fileName}, {new:true}, (err,projectUpdated)=>{
                     if(err) return res.status(500).send({message:"Error al añadir la imagen"});
-                    if(!projectUpdate) return res.status(404).send({message:"Error al encontrar los datos especificos"});
-                    return res.status(200).send({
-                        project: projectUpdate
-                    });
+                    if(!projectUpdated) return res.status(404).send({message:"Error al encontrar los datos especificos"});
+                    return res.status(200).send({project: projectUpdated});
                 });
             }else{
-                fs.unlink(filePath, (err)=>{
-                    return res.status(200).send({message: "extencion no valida"});
-                });
+              res.status(200).send({message: 'Extension del archivo no valida'});
             }
-        };
-        
+        }else{
+            res.status(200).send({message: 'No has subido ninguna imagen..'});
+        }
     },
     getImageFile: function(req,res){
         var file = req.params.image;
-        var path_file = "./uploads/"+file;
+        var pathFile = "./uploads/" + file;
 
-        fs.exists(path_file,(exists)=>{
+        fs.exists(pathFile,(exists)=>{
             if(exists){
-                return res.sendFile(path.resolve(path_file));
+                return res.sendFile(path.resolve(pathFile));
             }else{
                 return res.status(200).send({message: "No se pudo conseguir la imagen"});
             }

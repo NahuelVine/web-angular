@@ -22,6 +22,7 @@ export class CreateProjectsComponent implements OnInit {
   public filesToUpload: Array<File>;
   public url: string;
   public save_project;
+  private currentYear = new Date().getFullYear();
 
   constructor(
     private _projectService: ProjectService,
@@ -32,7 +33,7 @@ export class CreateProjectsComponent implements OnInit {
     this.error_description = "*La descricion es obligatoria";
     this.error_category = "*La categoria es obligatoria";
     this.error_langs = "*Los lenguajes son obligatorios"
-    this.project = new Project('','','','','',2020,'');
+    this.project = new Project('','','','','',this.currentYear,'');
     this.url = Global.url;
   }
 
